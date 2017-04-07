@@ -1,0 +1,15 @@
+digraph fsm {
+	rankdir=TB;
+	size="8,5"
+	node [shape = circle, color=black, style=filled];
+	STATE_START [label=""]
+	node [shape = circle, color=black, peripheries=2, style=filled];
+	STATE_END [label=""]
+	node [shape = circle, style=solid, peripheries=1, color=black];
+	STATE_START -> Red [label=""]
+	Green -> Amber [label="Stop unless unsafe to do so"]
+	Amber -> Red [label="Stop"]
+	Red -> RedAmber [label="Prepare to Go"]
+	RedAmber -> Green [label="Go"]
+	Green -> STATE_END [label=""]
+}
